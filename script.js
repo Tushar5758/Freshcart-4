@@ -26,7 +26,7 @@ function addProduct() {
     formData.append("category", category);
     if (image) formData.append("image", image);
 
-    fetch("http://localhost:3000/addProduct", {
+    fetch("https://freshcart-backend-x3av.onrender.com/addProduct", {
         method: "POST",
         body: formData
     })
@@ -122,7 +122,7 @@ function updateProduct() {
     formData.append("currentImage", currentImage);
     if (image) formData.append("image", image);
 
-    fetch(`http://localhost:3000/updateProduct/${id}`, {
+    fetch(`https://freshcart-backend-x3av.onrender.com/updateProduct/${id}`, {
         method: "PUT",
         body: formData
     })
@@ -136,7 +136,7 @@ function updateProduct() {
 
 function deleteProduct(id) {
     if (confirm("Are you sure you want to delete this product?")) {
-        fetch(`http://localhost:3000/deleteProduct/${id}`, {
+        fetch(`https://freshcart-backend-x3av.onrender.com/deleteProduct/${id}`, {
             method: "DELETE"
         })
         .then(response => response.json())
@@ -146,7 +146,7 @@ function deleteProduct(id) {
 }
 
 function fetchInventory() {
-    fetch("http://localhost:3000/getInventory")
+    fetch("https://freshcart-backend-x3av.onrender.com/getInventory")
     .then(res => res.json())
     .then(data => {
         let table = document.getElementById("inventoryTable");

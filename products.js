@@ -9,7 +9,7 @@ function viewProductDetails(itemId) {
 }
 
 function fetchInventory() {
-    fetch("http://localhost:3000/getInventory")
+    fetch("https://freshcart-backend-x3av.onrender.com/getInventory")
     .then(res => res.json())
     .then(data => {
         let productSlider1 = document.getElementById("product-slider-1");
@@ -28,7 +28,7 @@ function fetchInventory() {
         const secondHalf = data.slice(halfLength);
         
         firstHalf.forEach(item => {
-            const imageSrc = item.image ? `http://localhost:3000/image/${item.id}` : 'https://via.placeholder.com/50';
+            const imageSrc = item.image ? `https://freshcart-backend-x3av.onrender.com/image/${item.id}` : 'https://via.placeholder.com/50';
             productSlider1.innerHTML += `
                 <div class="swiper-slide box">
                     <img src="${imageSrc}" class="img-thumbnail" onclick="viewProductDetails(${item.id})" style="cursor: pointer;">
@@ -49,7 +49,7 @@ function fetchInventory() {
         });
         
         secondHalf.forEach(item => {
-            const imageSrc = item.image ? `http://localhost:3000/image/${item.id}` : 'https://via.placeholder.com/50';
+            const imageSrc = item.image ? `https://freshcart-backend-x3av.onrender.com/image/${item.id}` : 'https://via.placeholder.com/50';
             productSlider2.innerHTML += `
                 <div class="swiper-slide box">
                     <img src="${imageSrc}" class="img-thumbnail" onclick="viewProductDetails(${item.id})" style="cursor: pointer;">

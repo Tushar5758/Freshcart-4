@@ -306,7 +306,7 @@
                 return;
             }
             
-            fetch(`http://localhost:3000/getInventory`)
+            fetch(`https://freshcart-backend-x3av.onrender.com/getInventory`)
                 .then(response => response.json())
                 .then(data => {
                     const product = data.find(item => item.id == productId);
@@ -338,7 +338,7 @@
                     const productImage = document.getElementById('product-image');
                     if (product.image) {
                         // Use the same image loading approach as in script.js
-                        productImage.src = `http://localhost:3000/image/${product.id}`;
+                        productImage.src = `https://freshcart-backend-x3av.onrender.com/image/${product.id}`;
                     } else {
                         // Fallback to placeholder if no image
                         productImage.src = 'https://via.placeholder.com/400x300?text=Product+Image';
@@ -406,7 +406,7 @@
                 name: currentProduct.name,
                 price: currentProduct.price,
                 quantity: quantity,
-                image: currentProduct.image ? `http://localhost:3000/image/${currentProduct.id}` : 'https://via.placeholder.com/400x300?text=Product+Image',
+                image: currentProduct.image ? `https://freshcart-backend-x3av.onrender.com/image/${currentProduct.id}` : 'https://via.placeholder.com/400x300?text=Product+Image',
                 subtotal: total,
                 unit: currentProduct.unit
             };
@@ -459,7 +459,7 @@
             };
             
             // Send data to server
-            fetch('http://localhost:3000/add-to-cart', {
+            fetch('https://freshcart-backend-x3av.onrender.com/add-to-cart', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
